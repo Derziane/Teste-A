@@ -37,6 +37,10 @@ nav a{
   font-weight:bold;
 }
 
+nav a:hover{
+  color:#c8e6c9;
+}
+
 section{
   padding:40px 20px;
   max-width:1000px;
@@ -99,6 +103,10 @@ footer{
   margin-bottom:15px;
 }
 
+.calculadora p{
+  margin-bottom:15px;
+}
+
 .calculadora label{
   display:block;
   margin-top:15px;
@@ -111,6 +119,7 @@ footer{
   margin-top:5px;
   border:1px solid #ccc;
   border-radius:10px;
+  font-size:16px;
 }
 
 .calculadora button{
@@ -122,16 +131,37 @@ footer{
   border-radius:10px;
   cursor:pointer;
   transition:0.3s;
+  font-size:16px;
 }
 
 .calculadora button:hover{
   background:#2e7d32;
 }
 
+.resultado-box{
+  margin-top:25px;
+  background:#f1f8e9;
+  padding:20px;
+  border-radius:10px;
+}
+
 #resultado{
-  margin-top:20px;
+  margin-top:10px;
   color:#2e7d32;
-  font-size:20px;
+  font-size:22px;
   font-weight:bold;
+}
+
+#nivel{
+  margin-top:15px;
+  font-size:20px;
+}
+
+#dicas{
+  margin-top:20px;
+}
+
+#dicas li{
+  margin-bottom:10px;
 }
 ```

@@ -20,6 +20,7 @@
     <a href="#sobre">Sobre</a>
     <a href="#sustentabilidade">Sustentabilidade</a>
     <a href="#acoes">Ações</a>
+    <a href="#calculadora">Calculadora</a>
   </nav>
 
   <section id="sobre">
@@ -76,30 +77,45 @@
         <li>Preservar a natureza</li>
       </ul>
 
-      <!-- CALCULADORA -->
-      <div class="calculadora">
-        <h2>💧 Calculadora de Água para Plantio</h2>
-
-        <p>
-          Descubra a quantidade ideal de água para evitar desperdícios.
-        </p>
-
-        <label>Área do plantio (m²):</label>
-        <input type="number" id="area" placeholder="Digite a área">
-
-        <label>Quantidade de água por m² (litros):</label>
-        <input type="number" id="agua" placeholder="Ex: 5">
-
-        <button onclick="calcularAgua()">
-          Calcular Água Necessária
-        </button>
-
-        <h3 id="resultado"></h3>
-      </div>
-
       <a class="botao" href="#">
         Juntos por um futuro melhor
       </a>
+    </div>
+  </section>
+
+  <!-- CALCULADORA -->
+  <section id="calculadora">
+    <div class="card">
+
+      <div class="calculadora">
+        <h2>🚜 Calculadora de Emissão de Poluentes</h2>
+
+        <p>
+          Descubra a quantidade estimada de CO₂ emitida pelas máquinas agrícolas.
+        </p>
+
+        <label>Litros de diesel usados:</label>
+        <input type="number" id="diesel" placeholder="Ex: 150">
+
+        <label>Quantidade de máquinas agrícolas:</label>
+        <input type="number" id="maquinas" placeholder="Ex: 4">
+
+        <label>Dias de trabalho:</label>
+        <input type="number" id="dias" placeholder="Ex: 20">
+
+        <button onclick="calcularPoluicao()">
+          Calcular Emissão
+        </button>
+
+        <div class="resultado-box">
+          <h3 id="resultado"></h3>
+          <h3 id="nivel"></h3>
+
+          <ul id="dicas"></ul>
+        </div>
+
+      </div>
+
     </div>
   </section>
 
@@ -108,19 +124,52 @@
   </footer>
 
   <script>
-    function calcularAgua() {
 
-      let area = Number(document.getElementById("area").value);
-      let agua = Number(document.getElementById("agua").value);
+    function calcularPoluicao() {
 
-      let total = area * agua;
+      let diesel = Number(document.getElementById("diesel").value);
+      let maquinas = Number(document.getElementById("maquinas").value);
+      let dias = Number(document.getElementById("dias").value);
+
+      // cálculo estimado
+      let emissao = diesel * maquinas * dias * 2.68;
 
       document.getElementById("resultado").innerHTML =
-        "🌱 Será necessário utilizar <b>" +
-        total +
-        " litros</b> de água no plantio.";
+        "🌍 Emissão estimada de CO₂: <b>" +
+        emissao.toFixed(2) +
+        " kg</b>";
+
+      let nivel = "";
+      let dicas = "";
+
+      if (emissao < 5000) {
+
+        nivel = "🟢 Impacto Ambiental Baixo";
+
+      } else if (emissao < 15000) {
+
+        nivel = "🟡 Impacto Ambiental Moderado";
+
+      } else {
+
+        nivel = "🔴 Impacto Ambiental Alto";
+      }
+
+      document.getElementById("nivel").innerHTML = nivel;
+
+      dicas = `
+        <li>🌱 Realize manutenção preventiva nas máquinas.</li>
+        <li>☀️ Utilize energia solar na propriedade.</li>
+        <li>🚜 Evite desperdício de combustível.</li>
+        <li>🌳 Plante árvores para compensar carbono.</li>
+        <li>♻️ Invista em práticas agrícolas sustentáveis.</li>
+      `;
+
+      document.getElementById("dicas").innerHTML = dicas;
     }
+
   </script>
 
 </body>
 </html>
+```
