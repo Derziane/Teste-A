@@ -164,4 +164,37 @@ footer{
 #dicas li{
   margin-bottom:10px;
 }
+
+```css id="nrw5k5"
+/* RESULTADOS DAS CALCULADORAS */
+
+.resultado-box{
+  margin-top:25px;
+  background:#f1f8e9;
+  padding:20px;
+  border-radius:10px;
+}
+
+#resultadoAgua,
+#resultadoPoluicao{
+  margin-top:10px;
+  color:#2e7d32;
+  font-size:22px;
+  font-weight:bold;
+}
+
+#nivel{
+  margin-top:15px;
+  font-size:20px;
+  font-weight:bold;
+}
+
+#dicas{
+  margin-top:20px;
+}
+
+#dicas li{
+  margin-bottom:10px;
+}
+
 ```
