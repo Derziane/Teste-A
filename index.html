@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -5,14 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agrinho - Agro Forte, Futuro Sustentável</title>
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 
 <body>
 
   <header>
-    <h1>Agro Forte, Futuro Sustentável</h1>
-    <p>Equilíbrio entre produção e meio ambiente</p>
+    <h1>AGRO FORTE, FUTURO SUSTENTÁVEL</h1>
+    <p>Equilíbrio entre Produção e Meio Ambiente</p>
   </header>
 
   <nav>
@@ -23,7 +24,7 @@
 
   <section id="sobre">
     <div class="card">
-      <h2>🌱 Sobre o Projeto</h2>
+      <h3>🌱 AGRONEGÓCIO</h3>
 
       <p>
         O agronegócio é essencial para alimentar o mundo e movimentar a economia.
@@ -75,6 +76,27 @@
         <li>Preservar a natureza</li>
       </ul>
 
+      <!-- CALCULADORA -->
+      <div class="calculadora">
+        <h2>💧 Calculadora de Água para Plantio</h2>
+
+        <p>
+          Descubra a quantidade ideal de água para evitar desperdícios.
+        </p>
+
+        <label>Área do plantio (m²):</label>
+        <input type="number" id="area" placeholder="Digite a área">
+
+        <label>Quantidade de água por m² (litros):</label>
+        <input type="number" id="agua" placeholder="Ex: 5">
+
+        <button onclick="calcularAgua()">
+          Calcular Água Necessária
+        </button>
+
+        <h3 id="resultado"></h3>
+      </div>
+
       <a class="botao" href="#">
         Juntos por um futuro melhor
       </a>
@@ -82,8 +104,23 @@
   </section>
 
   <footer>
-    <p>Projeto Agrinho 2026 | Agro Forte, Futuro Sustentável</p>
+    <p>"Equilíbrio entre Produção e Meio Ambiente”</p>
   </footer>
+
+  <script>
+    function calcularAgua() {
+
+      let area = Number(document.getElementById("area").value);
+      let agua = Number(document.getElementById("agua").value);
+
+      let total = area * agua;
+
+      document.getElementById("resultado").innerHTML =
+        "🌱 Será necessário utilizar <b>" +
+        total +
+        " litros</b> de água no plantio.";
+    }
+  </script>
 
 </body>
 </html>
