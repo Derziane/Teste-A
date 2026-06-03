@@ -1,12 +1,12 @@
-```html id="7kk29s"
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agrinho - Agro Forte, Futuro Sustentável</title>
 
-  <link rel="stylesheet" type="text/css" href="./style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -14,6 +14,10 @@
   <header>
     <h1>AGRO FORTE, FUTURO SUSTENTÁVEL</h1>
     <p>Equilíbrio entre Produção e Meio Ambiente</p>
+
+    <button onclick="alternarTema()" class="botao">
+      🌙 Alternar Tema
+    </button>
   </header>
 
   <nav>
@@ -25,6 +29,7 @@
 
   <section id="sobre">
     <div class="card">
+
       <h3>🌱 AGRONEGÓCIO</h3>
 
       <p>
@@ -33,14 +38,17 @@
         preservando rios, florestas e os animais.
       </p>
 
-      <img class="imagem"
-      src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854"
-      alt="Plantação sustentável">
+      <img
+        class="imagem"
+        src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854"
+        alt="Plantação sustentável">
+
     </div>
   </section>
 
   <section id="sustentabilidade">
     <div class="card">
+
       <h2>♻️ Agricultura Sustentável</h2>
 
       <p>
@@ -55,14 +63,17 @@
         <li>Proteção do solo</li>
       </ul>
 
-      <img class="imagem"
-      src="https://images.unsplash.com/photo-1464226184884-fa280b87c399"
-      alt="Natureza e agricultura">
+      <img
+        class="imagem"
+        src="https://images.unsplash.com/photo-1464226184884-fa280b87c399"
+        alt="Natureza e agricultura">
+
     </div>
   </section>
 
   <section id="acoes">
     <div class="card">
+
       <h2>🚜 Pequenas Ações Fazem Diferença</h2>
 
       <p>
@@ -80,16 +91,20 @@
       <a class="botao" href="#">
         Juntos por um futuro melhor
       </a>
+
     </div>
   </section>
 
   <!-- CALCULADORAS -->
+
   <section id="calculadoras">
 
     <!-- CALCULADORA DE ÁGUA -->
+
     <div class="card">
 
       <div class="calculadora">
+
         <h2>💧 Calculadora de Água para Plantio</h2>
 
         <p>
@@ -109,14 +124,17 @@
         <div class="resultado-box">
           <h3 id="resultadoAgua"></h3>
         </div>
+
       </div>
 
     </div>
 
     <!-- CALCULADORA DE POLUIÇÃO -->
+
     <div class="card">
 
       <div class="calculadora">
+
         <h2>🚜 Calculadora de Emissão de Poluentes</h2>
 
         <p>
@@ -137,10 +155,12 @@
         </button>
 
         <div class="resultado-box">
+
           <h3 id="resultadoPoluicao"></h3>
           <h3 id="nivel"></h3>
 
           <ul id="dicas"></ul>
+
         </div>
 
       </div>
@@ -153,69 +173,9 @@
     <p>"Equilíbrio entre Produção e Meio Ambiente"</p>
   </footer>
 
-  <script>
-
-    /* CALCULADORA DE ÁGUA */
-
-    function calcularAgua() {
-
-      let area = Number(document.getElementById("area").value);
-      let agua = Number(document.getElementById("agua").value);
-
-      let total = area * agua;
-
-      document.getElementById("resultadoAgua").innerHTML =
-        "💧 Será necessário utilizar <b>" +
-        total +
-        " litros</b> de água no plantio.";
-    }
-
-    /* CALCULADORA DE POLUIÇÃO */
-
-    function calcularPoluicao() {
-
-      let diesel = Number(document.getElementById("diesel").value);
-      let maquinas = Number(document.getElementById("maquinas").value);
-      let dias = Number(document.getElementById("dias").value);
-
-      let emissao = diesel * maquinas * dias * 2.68;
-
-      document.getElementById("resultadoPoluicao").innerHTML =
-        "🌍 Emissão estimada de CO₂: <b>" +
-        emissao.toFixed(2) +
-        " kg</b>";
-
-      let nivel = "";
-      let dicas = "";
-
-      if (emissao < 5000) {
-
-        nivel = "🟢 Impacto Ambiental Baixo";
-
-      } else if (emissao < 15000) {
-
-        nivel = "🟡 Impacto Ambiental Moderado";
-
-      } else {
-
-        nivel = "🔴 Impacto Ambiental Alto";
-      }
-
-      document.getElementById("nivel").innerHTML = nivel;
-
-      dicas = `
-        <li>🌱 Realize manutenção preventiva nas máquinas.</li>
-        <li>☀️ Utilize energia solar na propriedade.</li>
-        <li>🚜 Evite desperdício de combustível.</li>
-        <li>🌳 Plante árvores para compensar carbono.</li>
-        <li>♻️ Invista em práticas agrícolas sustentáveis.</li>
-      `;
-
-      document.getElementById("dicas").innerHTML = dicas;
-    }
-
-  </script>
+  <script src="script.js"></script>
 
 </body>
+
 </html>
 ```
