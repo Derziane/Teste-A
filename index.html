@@ -9,31 +9,46 @@
   <title>Agrinho - Agro Forte, Futuro Sustentável</title>
 
   <link rel="stylesheet" href="style.css">
-
-  <select id="idioma">
-    <option value="pt">Português</option>
-    <option value="en">English</option>
-    <option value="es">Español</option>
-  </select>
   
 </head>
 
 <body>
+    <select id="idioma">
+      <option value="pt">Português</option>
+      <option value="en">English</option>
+      <option value="es">Español</option>
+    </select>
+    
+    <header>
+      <h1 data-i18n="titulo">
+        Agro Forte e Sustentável
+      </h1>
 
-  <header>
+      <p data-i18n="subtitulo">
+        Tecnologia e Sustentabilidade no Campo
+      </p>
+
+
     <h1>AGRO FORTE, FUTURO SUSTENTÁVEL</h1>
     <p>Equilíbrio entre Produção e Meio Ambiente</p>
 
     <button onclick="alternarTema()" class="botao">
       🌙 Alternar Tema
     </button>
+  
   </header>
 
   <nav>
-    <a href="#sobre">Sobre</a>
-    <a href="#sustentabilidade">Sustentabilidade</a>
-    <a href="#acoes">Ações</a>
-    <a href="#calculadoras">Calculadoras</a>
+
+      <a href="#" data-i18n="menuInicio">Início</a>
+      <a href="#" data-i18n="menuAgro">Agronegócio</a>
+      <a href="#" data-i18n="menuCalculadoras">Calculadoras</a>
+      <a href="#" data-i18n="menuContato">Contato</a>
+
+      <a href="#sobre">Sobre</a>
+      <a href="#sustentabilidade">Sustentabilidade</a>
+      <a href="#acoes">Ações</a>
+      <a href="#calculadoras">Calculadoras</a>
   </nav>
 
   <section id="sobre">
@@ -110,6 +125,9 @@
 
       <a class="botao" href="#">
         Juntos por um futuro melhor
+      </a>
+      <a href="#" class="botao" data-i18n="btnSaibaMais">
+        Saiba Mais
       </a>
 
     </div>
@@ -195,6 +213,7 @@
     <p>" Colégio Estadual do Campo Maria Diva Ribeiro de Proença"</p>
   </footer>
 
+  <script src="idiomas.js"></script>
   <script src="script.js"></script>
 
 </body>

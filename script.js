@@ -1,15 +1,19 @@
 const idioma = document.getElementById("idioma");
 
-idioma.addEventListener("change", () => {
-    const linguagem = idioma.value;
+idioma.addEventListener("change", function(){
 
-    if (linguagem === "pt") {
-        document.documentElement.lang = "pt-BR";
-    } else if (linguagem === "en") {
-        document.documentElement.lang = "en";
-    } else if (linguagem === "es") {
-        document.documentElement.lang = "es";
-    }
+    const lang = this.value;
+
+    document.querySelectorAll("[data-i18n]").forEach(element => {
+
+        const chave = element.getAttribute("data-i18n");
+
+        if(traducoes[lang][chave]){
+            element.textContent = traducoes[lang][chave];
+        }
+
+    });
+
 });
 
 
