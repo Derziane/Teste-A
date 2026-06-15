@@ -1,3 +1,18 @@
+const idioma = document.getElementById("idioma");
+
+idioma.addEventListener("change", () => {
+    const linguagem = idioma.value;
+
+    if (linguagem === "pt") {
+        document.documentElement.lang = "pt-BR";
+    } else if (linguagem === "en") {
+        document.documentElement.lang = "en";
+    } else if (linguagem === "es") {
+        document.documentElement.lang = "es";
+    }
+});
+
+
 /* ==========================
    CALCULADORA DE ÁGUA
 ========================== */
